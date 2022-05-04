@@ -8,3 +8,7 @@ class CreateArticles < ActiveRecord::Migration[7.0]
     end
   end
 end
+
+#Migration = making a change to an application's database via bin/rails db:migrate
+#Above sets the database schema.
+#primary ID is auto-incrementing starting at 1 
