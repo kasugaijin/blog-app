@@ -9,3 +9,35 @@
           turbo_confirm: "Are you sure, now?"
          } %></li>
 </ul>
+
+<h2>Comments</h2>
+<% @article.comments.each do |comment| %>
+
+  <p>
+  <strong>Name:</strong>
+  <%= comment.commenter %>
+  </p>
+
+  <p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+  </p>
+
+  <% end %>
+
+<h2>Add a comment:</h2>
+  <%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  
+  <p><%= form.label 'Name' %><br>  
+    <%= form.text_field :commenter %>
+  </p>
+
+  <p><%= form.label 'Comment' %><br>
+    <%= form.text_area :body %>
+  </p>
+
+  <p>
+  <%= form.submit %>
+  </p>
+
+  <% end %>
