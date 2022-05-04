@@ -3,7 +3,10 @@
 <ul>
   <% @articles.each do |article| %>
     <li>
-      <%= article.title %>
+      <%= link_to article.title, article %>
     </li>
    <% end %>
 </ul>
+
+<%# link_to elper renders a link with its first argument as 
+the link's text and its second argument as the link's destination %>
