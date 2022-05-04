@@ -1,0 +1,13 @@
+<p>
+  <strong>Name:</strong>
+  <%= comment.commenter %>
+  </p>
+
+  <p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+  </p>
+
+  <%# As the render method in show.html.erb iterates over the @article.comments collection, it assigns each comment 
+  to a local variable named the same as the partial above,(comment) which is then available 
+  in the partial for us to show. %>

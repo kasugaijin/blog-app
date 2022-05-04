@@ -10,34 +10,10 @@
          } %></li>
 </ul>
 
+<%# This render passes each comment into the _comment.html.erb partial %>
 <h2>Comments</h2>
-<% @article.comments.each do |comment| %>
+<% render @article.comments %>
 
-  <p>
-  <strong>Name:</strong>
-  <%= comment.commenter %>
-  </p>
-
-  <p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-  </p>
-
-  <% end %>
-
+<%# This renders the _comment.html.erb partial as is %>
 <h2>Add a comment:</h2>
-  <%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  
-  <p><%= form.label 'Name' %><br>  
-    <%= form.text_field :commenter %>
-  </p>
-
-  <p><%= form.label 'Comment' %><br>
-    <%= form.text_area :body %>
-  </p>
-
-  <p>
-  <%= form.submit %>
-  </p>
-
-  <% end %>
+<% render 'comments/form' %>
