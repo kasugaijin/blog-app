@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # edit and update are similar to new and create and both use the partial _form. 
   def edit
     @article = Article.find(params[:id])
   end
@@ -38,6 +39,15 @@ class ArticlesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  # destroy method finds the article, destroys, then redirects using see_other, which is HTTP 303
+  # that does not link to the reqested resource...which makes sense as it is deleted
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to root_path, status: :see_other
   end
 
   # Strong parameters in private method ensure the params hash passed to the CREATE action only contains
