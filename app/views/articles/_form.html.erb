@@ -1,0 +1,31 @@
+<%= form_with model: article do |form|%>
+
+<div>
+  <%= form.label :title %><br>
+  <%= form.text_field :title%>
+  <% article.errors.full_messages_for(:title).each do |message| %>
+
+    <div><%= message %></div>
+    <% end %>
+</div>
+
+<div>
+  <%= form.label :body %><br>
+  <%= form.text_area :body%>
+  <% article.errors.full_messages_for(:body).each do |message| %>
+
+    <div><%= message %></div>
+    <% end %>
+</div>
+
+<div>
+<%= form.submit %>
+</div>
+
+<% end %>
+
+<%# This file is a partial used by Articles#new and Articles#edit since they both use the same form%>
+<%# note there is no use of an instance variable because it is a shared resource - see each 
+form (new and edit) html.erb for the declaration of article as the appropriate instance variable  %>
+<%# form_with helper instantiates Rails' form builder %>
+<%# validation errors will show if validations defined in Article Class not met %>
