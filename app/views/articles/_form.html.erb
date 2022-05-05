@@ -1,25 +1,26 @@
 <%= form_with model: article do |form|%>
 
-<div>
+<div class='form-group mb-3'>
   <%= form.label :title %><br>
-  <%= form.text_field :title%>
+  <%= form.text_field :title, class: 'form-control form-control-lg' %>
   <% article.errors.full_messages_for(:title).each do |message| %>
 
     <div><%= message %></div>
     <% end %>
 </div>
 
-<div>
+<div class='form-group mb-3'>
   <%= form.label :body %><br>
-  <%= form.text_area :body%>
+  <%= form.text_area :body, class: 'form-control form-control-lg' %>
   <% article.errors.full_messages_for(:body).each do |message| %>
 
     <div><%= message %></div>
     <% end %>
 </div>
 
-<div>
-<%= form.submit class: 'btn btn-primary' %>
+<div class='form-group mt-3'>
+<%= form.submit class: 'btn btn-primary mr-2' %>
+<%= link_to "Back", articles_path, class: 'btn btn-outline-primary' %>
 </div>
 
 <% end %>
