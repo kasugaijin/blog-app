@@ -12,10 +12,15 @@
   </head>
 
   <body>
-    <div class='container'>
-      <div class='row'>
-        <%= yield %>
-      </div>
-    </div>  
+ <nav class="navbar navbar-light mb-4 col-lg-6 mx-auto">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/f8f09554-8991-4572-b2f6-eb2430e97462/ruby-on-rails.png" 
+      alt="Ruby logo" width="100" class="d-inline-block align-text-top">
+      Rails Blog
+    </a>
+  </div>
+</nav>
+    <%= yield %>
   </body>
 </html>
