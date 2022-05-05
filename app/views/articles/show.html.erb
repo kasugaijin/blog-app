@@ -1,3 +1,4 @@
+<p><%= link_to 'Home', articles_path%></p>
 <h1><%= @article.title %></h1>
 
 <p><%= @article.body %></p>
@@ -12,8 +13,8 @@
 
 <%# This render passes each comment into the _comment.html.erb partial %>
 <h2>Comments</h2>
-<% render @article.comments %>
+<%= render @article.comments %>
 
 <%# This renders the _comment.html.erb partial as is %>
 <h2>Add a comment:</h2>
-<% render 'comments/form' %>
+<%= render 'comments/form' %>
