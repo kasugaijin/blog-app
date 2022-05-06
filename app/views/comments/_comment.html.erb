@@ -4,15 +4,16 @@
     <div class="card-header">
       <h5 class="card-title"><%= comment.commenter %></h5>
     </div>
-    <div class="card-body mb-2">
+    <div class="card-body">
       <%= comment.body %>
       <div class='form-group mt-3'>
-        <%= link_to 'Delete Post', [comment.article,comment], class: 'btn btn-outline-primary mt-3',
+        <%= link_to 'Delete', [comment.article,comment], class: 'btn btn-outline-primary mt-3',
               data: 
             {
               turbo_method: :delete,
               turbo_confirm: "Are you sure?"
             } %>
+      </div>
     </div>
   </div>
 
