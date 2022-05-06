@@ -22,11 +22,13 @@
 </div>
 
     <%# This renders the _comment.html.erb partial as is %>
-    <h2>Add a comment:</h2>
-    <%= render 'comments/form' %>
+    <div class="col-lg-4 mx-auto mb-2 mt-5">
+      <h3 >Add a comment:</h3>
+      <%= render 'comments/form' %>
+    </div>
 
     <%# This render passes each comment into the _comment.html.erb partial %>
-    <h3 class="col-lg-4 mx-auto mb-2">Comments</h3>
+    <h3 class="col-lg-4 mx-auto mb-2 mt-5">Comments</h3>
     <%= render @article.comments %>
 
     

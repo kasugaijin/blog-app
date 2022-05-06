@@ -1,15 +1,18 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
   
-  <p><%= form.label 'Name' %><br>  
-    <%= form.text_field :commenter %>
-  </p>
+  <div class='form-group mb-3'>
+    <%= form.label 'Name' %><br>  
+    <%= form.text_field :commenter, class: 'form-control form-control-lg' %>
+  </div>
 
-  <p><%= form.label 'Comment' %><br>
-    <%= form.text_area :body %>
-  </p>
+  <div class='form-group mb-3'>
+    <%= form.label 'Comment' %><br>
+    <%= form.text_area :body, class: 'form-control form-control-lg' %>
+  </div>
+  
+  <div class='form-group mt-3'>
+    <%= form.submit "submit", class: 'btn btn-outline-primary' %>
+  </div>
 
-  <p>
-  <%= form.submit %>
-  </p>
 
   <% end %>
