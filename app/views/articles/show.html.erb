@@ -7,24 +7,26 @@
       </div>
       <div class="card-body">
         <%= @article.body %>
+        <div class='form-group mt-3'>
+          <%= link_to 'Edit Post', edit_article_path(@article), class: 'btn btn-outline-primary mt-3' %>
+          <%= link_to 'Delete Post', article_path(@article), class: 'btn btn-outline-primary mt-3',
+                data: 
+              {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              } %>
+        </div>
     </div>
+    
     </div>
 </div>
-
-    <ul>
-      <li><%= link_to 'Edit Article', edit_article_path(@article) %></li>
-      <li><%= link_to 'Delete Article', article_path(@article), data: {
-              turbo_method: :delete,
-              turbo_confirm: "Are you sure, now?"
-            } %></li>
-    </ul>
 
     <%# This renders the _comment.html.erb partial as is %>
     <h2>Add a comment:</h2>
     <%= render 'comments/form' %>
 
     <%# This render passes each comment into the _comment.html.erb partial %>
-    <h2>Comments</h2>
+    <h3 class="col-lg-4 mx-auto mb-2">Comments</h3>
     <%= render @article.comments %>
 
     
