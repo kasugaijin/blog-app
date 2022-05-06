@@ -1,14 +1,21 @@
 
-<div class="col-lg-4 mx-auto mb-2">
+
   <div class="card shadow">
     <div class="card-header">
       <h5 class="card-title"><%= comment.commenter %></h5>
     </div>
-    <div class="card-body">
+    <div class="card-body mb-2">
       <%= comment.body %>
+      <div class='form-group mt-3'>
+        <%= link_to 'Delete Post', [comment.article,comment], class: 'btn btn-outline-primary mt-3',
+              data: 
+            {
+              turbo_method: :delete,
+              turbo_confirm: "Are you sure?"
+            } %>
     </div>
   </div>
-</div>
+
 
   <%# As the render method in show.html.erb iterates over the @article.comments collection, it assigns each comment 
   to a local variable named the same as the partial above,(comment) which is then available 

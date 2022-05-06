@@ -29,6 +29,8 @@
 
     <%# This render passes each comment into the _comment.html.erb partial %>
     <h3 class="col-lg-4 mx-auto mb-2 mt-5">Comments</h3>
-    <%= render @article.comments %>
+    <div class="col-lg-4 mx-auto">
+      <%= render @article.comments %>
+    </div>
 
     
