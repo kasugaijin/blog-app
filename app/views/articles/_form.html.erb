@@ -1,3 +1,10 @@
+<%# model: article corresponds with the @article defined on the new and edit pages that call
+a render to this form with that instance of Article. Setting this form up with a reference
+rather than an actual @article instance allows multiple instances to be passed to this form
+e.g. New and Edit. The form automatically updates the fields with the data held in the 
+instance's fields i.e., an instance passed via edit.html is populated with existing title and body, 
+where as an instance passed from new.html is a blank form b/c the instance variable is empty %>
+
 <%= form_with model: article do |form|%>
 
 <div class='form-group mb-3'>

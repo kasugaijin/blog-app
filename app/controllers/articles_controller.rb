@@ -31,6 +31,10 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  # if a form does not save to db due to validation error the server would send a 200 OK response because
+  # it is acting as expected. However, we want to reload the page and show the errors so we use
+  # status: :unprocessable entity to make the server return a 422 unprocessble entity and then Turbo reloads the page
+  # and the form is set up to display the errors to the user. BMP is to use JS for live validation.
   def update
     @article = Article.find(params[:id])
 
@@ -55,6 +59,7 @@ class ArticlesController < ApplicationController
 
   private
 
+  # this creates a hash from the inputted data in a form that can then be passed to .new arg above 
   def article_params
     params.require(:article).permit(:title, :body)
   end
