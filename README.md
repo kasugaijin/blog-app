@@ -13,6 +13,6 @@ This was a good exercise to practice:
 
 View live at (Heroku takes ~20 seconds to load the server): https://powerful-chamber-58967.herokuapp.com/
 
-Home page screenshot: ![screenshot](/Screenshot.png![alt](https://link)?raw=true "")
+Home page screenshot: ![screenshot](/Screenshot.png?raw=true "")
 
 
